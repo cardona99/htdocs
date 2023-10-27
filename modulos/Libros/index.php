@@ -2,7 +2,10 @@
 error_reporting(0);
 include("../../conexion.php");
 
+
 $valor = $_POST["campo"];
+
+
 if(empty($valor)){
     $stm=$conexion->prepare("SELECT * FROM Libros");
     $stm->execute();

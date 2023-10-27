@@ -28,7 +28,7 @@ if($_POST){
         $message = "Por favor, complete todos los campos.";
     } else {
 
-    $stm= $conexion->prepare( "UPDATE Libros SET Titulo=:Titulo,Autor=:Autor,Año=:fecha,Genero=:Genero WHERE id=:txtid");
+    $stm= $conexion->prepare( "UPDATE Libros SET Titulo=:Titulo,Autor=:Autor,fecha=:fecha,Genero=:Genero WHERE id=:txtid");
     $stm->bindparam(":Titulo",$Titulo);
     $stm->bindparam(":Autor",$Autor);
     $stm->bindparam(":fecha",$fecha);
