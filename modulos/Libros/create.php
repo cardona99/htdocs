@@ -9,7 +9,7 @@ if($_POST){
     if (empty($Titulo) || empty($Autor) || empty($fecha) || empty($Genero)) {
       echo "Por favor, complete todos los campos.";
   } else {
-    $stm= $conexion->prepare("INSERT INTO Libros(id,Titulo,Autor,fecha,Genero)
+    $stm= $conexion->prepare("INSERT INTO Libros(id,Titulo,Autor,año,Genero)
     VALUES(null,:Titulo,:Autor,:fecha,:Genero)");
     $stm->bindparam(":Titulo",$Titulo);
     $stm->bindparam(":Autor",$Autor);
@@ -18,6 +18,7 @@ if($_POST){
     $stm->execute();
 
     header("location:index.php");
+    
   }
 
 }
